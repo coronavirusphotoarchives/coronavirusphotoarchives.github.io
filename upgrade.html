@@ -99,5 +99,10 @@
                 You must use a supported browser and/or enable JavaScript for this site to work.
             </footer>
         </div>
+        <script>
+            if (!$.browser.msie) {
+                document.location.href="/"
+            }
+        </script>
     </body>
 </html>
