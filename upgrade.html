@@ -99,9 +99,21 @@
                 You must use a supported browser and/or enable JavaScript for this site to work.
             </footer>
         </div>
+        <script src="//cdn.jsdelivr.net/gh/jquery/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script>
+            jQuery.browser = {};
+            (function () {
+                jQuery.browser.msie = false;
+                jQuery.browser.version = 0;
+                if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+                    jQuery.browser.msie = true;
+                    jQuery.browser.version = RegExp.$1;
+                }
+            })();
+        </script>
         <script>
             if (!$.browser.msie) {
-                document.location.href="/"
+                document.location.href = "/";
             }
         </script>
     </body>
