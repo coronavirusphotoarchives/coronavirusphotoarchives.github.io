@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
+        <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#212529" media="(prefers-color-scheme: dark)" />
+
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
 
         <title>{{ page.title }} | Corona Virus Photo Archives</title>
@@ -17,6 +20,47 @@
         </script>
     </head>
     <body>
+        <script>
+            var _umb = {
+                require: {
+                    chrome: 90,
+                    safari: 13.6,
+                    edge: 90,
+                    firefox: 88,
+                    ie: null,
+                    opera: 75,
+                },
+                nonCritical: true,
+            };
+            (function (u) {
+                var s = document.createElement("script");
+                s.async = true;
+                s.src = u;
+                var b = document.getElementsByTagName("script")[0];
+                b.parentNode.insertBefore(s, b);
+            })("https://updatemybrowser.org/umb.js");
+        </script>
+        <script>
+            function browsersupportcheck() {
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
+                if (msie > 0) {
+                    document.write("<style>.msie-check{display:none!important}</style>");
+                    window.location.replace("/upgrade.html");
+                }
+                var trident = ua.indexOf("Trident/");
+                if (trident > 0) {
+                    document.write("<style>.msie-check{display:none!important}</style>");
+                    window.location.replace("/upgrade.html");
+                }
+                var edge = ua.indexOf("Edge/");
+                if (edge > 0) {
+                    document.write("<style>.msie-check{display:none!important}</style>");
+                    window.location.replace("/upgrade.html");
+                }
+            }
+            browsersupportcheck();
+        </script>
         <div class="msie-check script-check">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
@@ -71,43 +115,5 @@
             <meta http-equiv="refresh" content="0; url = /upgrade.html" />
         </noscript>
         <script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-        <script>
-            var _umb = {
-                require: {
-                    chrome: 90,
-                    safari: 13.4,
-                    edge: 90,
-                    firefox: 87,
-                    ie: null,
-                    opera: 74,
-                },
-                nonCritical: true,
-            };
-            (function (u) {
-                var s = document.createElement("script");
-                s.async = true;
-                s.src = u;
-                var b = document.getElementsByTagName("script")[0];
-                b.parentNode.insertBefore(s, b);
-            })("//updatemybrowser.org/umb.js");
-        </script>
-        <script src="//cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
-        <script>
-            jQuery.browser = {};
-            (function () {
-                jQuery.browser.msie = false;
-                jQuery.browser.version = 0;
-                if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
-                    jQuery.browser.msie = true;
-                    jQuery.browser.version = RegExp.$1;
-                }
-            })();
-        </script>
-        <script>
-            if ($.browser.msie) {
-                document.write("<style>.msie-check{display:none!important}</style>");
-                window.location.replace("/upgrade.html");
-            }
-        </script>
     </body>
 </html>
