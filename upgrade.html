@@ -2,8 +2,12 @@
 <html lang="en">
     <head>
         <title>Unable to load page | Corona Virus Photo Archives</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+        <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#212529" media="(prefers-color-scheme: dark)" />
 
         <!-- http://caniuse.com/#feat=referrer-policy -->
         <meta name="referrer" content="no-referrer" />
@@ -101,24 +105,19 @@
                 </footer>
             </div>
         </noscript>
-        <script src="//cdn.jsdelivr.net/gh/jquery/jquery@3.6.0/dist/jquery.min.js"></script>
         <script>
-            jQuery.browser = {};
-            (function () {
-                jQuery.browser.msie = false;
-                jQuery.browser.version = 0;
-                if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
-                    jQuery.browser.msie = true;
-                    jQuery.browser.version = RegExp.$1;
+            function browsersupportcheck() {
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
+                var trident = ua.indexOf("Trident/");
+                var edge = ua.indexOf("Edge/");
+                if (msie > 0 || trident > 0 || edge > 0) {
+                    document.write('<div class="main"><h1 class="title">Unable to load page</h1><footer>You must use a supported browser and/or enable JavaScript for this site to work.</footer></div>');
+                } else {
+                    document.location.href = "/";
                 }
-            })();
-        </script>
-        <script>
-            if ($.browser.msie) {
-                document.write('<div class="main"><h1 class="title">Unable to load page</h1><footer>You must use a supported browser and/or enable JavaScript for this site to work.</footer></div>');
-            } else {
-                document.location.href = "/";
             }
+            browsersupportcheck();
         </script>
     </body>
 </html>
