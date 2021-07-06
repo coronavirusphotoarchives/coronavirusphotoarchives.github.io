@@ -52,15 +52,7 @@
                  * https://stackoverflow.com/questions/5916900/how-can-you-detect-the-version-of-a-browser#answer-49582577
                  */
                 var result = bowser.getParser(window.navigator.userAgent);
-                if ((result.parsedResult.browser.name == "Firefox") & (result.parsedResult.browser.version <= "59.0.3")) {
-                    document.write("<style>.msie-check{display:none!important}</style>");
-                    document.location.href = "/upgrade.html";
-                }
-                if ((result.parsedResult.browser.name == "Safari") & (result.parsedResult.browser.version <= "11.1.2")) {
-                    document.write("<style>.msie-check{display:none!important}</style>");
-                    document.location.href = "/upgrade.html";
-                }
-                if ((result.parsedResult.browser.name == "Chrome") & (result.parsedResult.browser.version <= "59.0.3071")) {
+                if (((result.parsedResult.browser.name == "Firefox") & (result.parsedResult.browser.version <= "59.0.3")) || ((result.parsedResult.browser.name == "Safari") & (result.parsedResult.browser.version <= "11.1.2")) || ((result.parsedResult.browser.name == "Chrome") & (result.parsedResult.browser.version <= "59.0.3071")) ) {
                     document.write("<style>.msie-check{display:none!important}</style>");
                     document.location.href = "/upgrade.html";
                 }
@@ -74,17 +66,9 @@
 
                 var ua = window.navigator.userAgent;
                 var msie = ua.indexOf("MSIE ");
-                if (msie > 0) {
-                    document.write("<style>.msie-check{display:none!important}</style>");
-                    document.location.href = "/upgrade.html";
-                }
                 var trident = ua.indexOf("Trident/");
-                if (trident > 0) {
-                    document.write("<style>.msie-check{display:none!important}</style>");
-                    document.location.href = "/upgrade.html";
-                }
                 var edge = ua.indexOf("Edge/");
-                if (edge > 0) {
+                if (msie > 0 || trident > 0 || edge > 0) {
                     document.write("<style>.msie-check{display:none!important}</style>");
                     document.location.href = "/upgrade.html";
                 }

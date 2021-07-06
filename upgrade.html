@@ -113,14 +113,10 @@
                  * https://stackoverflow.com/questions/5916900/how-can-you-detect-the-version-of-a-browser#answer-49582577
                  */
                 var result = bowser.getParser(window.navigator.userAgent);
-                if ((result.parsedResult.browser.name == "Firefox") & (result.parsedResult.browser.version <= "59.0.3")) {
+                if (((result.parsedResult.browser.name == "Firefox") & (result.parsedResult.browser.version <= "59.0.3")) || ((result.parsedResult.browser.name == "Safari") & (result.parsedResult.browser.version <= "11.1.2")) || ((result.parsedResult.browser.name == "Chrome") & (result.parsedResult.browser.version <= "59.0.3071")) ) {
                     document.write('<div class="main"><h1 class="title">Unable to load page</h1><footer>You must use a supported browser and/or enable JavaScript for this site to work.</footer></div>');
-                }
-                if ((result.parsedResult.browser.name == "Safari") & (result.parsedResult.browser.version <= "11.1.2")) {
-                    document.write('<div class="main"><h1 class="title">Unable to load page</h1><footer>You must use a supported browser and/or enable JavaScript for this site to work.</footer></div>');
-                }
-                if ((result.parsedResult.browser.name == "Chrome") & (result.parsedResult.browser.version <= "59.0.3071")) {
-                    document.write('<div class="main"><h1 class="title">Unable to load page</h1><footer>You must use a supported browser and/or enable JavaScript for this site to work.</footer></div>');
+                } else {
+                    document.location.href="/";
                 }
 
                 /*****************************/
