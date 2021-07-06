@@ -115,6 +115,11 @@ layout: photos
                     <embed src="./cdn/img/img22.png" width="100%" height="225" alt draggable="false" />
                 </div>
             </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <embed src="./cdn/img/img23.png" width="100%" height="225" alt draggable="false" />
+                </div>
+            </div>
             <!--
                 <div class="col">
                   <div class="card shadow-sm">
