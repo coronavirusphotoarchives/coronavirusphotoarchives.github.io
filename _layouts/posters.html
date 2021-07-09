@@ -5,19 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-        <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#212529" media="(prefers-color-scheme: dark)" />
 
         <link rel="stylesheet" href="/cdn/css/bootstrap.min.css" integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA==" crossorigin="anonymous" />
 
         <title>{{ page.title }} | Corona Virus Photo Archives</title>
-        <script src="/cdn/js/darkmode-js.min.js" integrity="sha512-y61YvXQLQM3hubnG+D7IKUAaPlfwzjkNE5XdEZPzoxFXLeeS8TJQ4aUVmmHRrkk0OMz5FmZF1Fv88A79/W7mgw==" crossorigin="anonymous"></script>
-        <script>
-            function addDarkmodeWidget() {
-                new Darkmode(); /*.showWidget();*/
+        
+        <style>
+            @media (prefers-color-scheme: light) {
+                body {
+                    background-color: rgb(255, 255, 255)!important;
+                    color: rgb(0, 0, 0)!important;
+                }
+                div.navbar {
+                    background-color: rgb(248, 249, 250)!important;
+                    color:rgb(33, 37, 41)!important;
+                }
             }
-            window.addEventListener("load", addDarkmodeWidget);
-        </script>
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color:rgb(0, 0, 0);
+                    color:rgb(255, 255, 255);
+                }
+                div.navbar {
+                    background-color: rgb(34, 38, 42)!important;
+                    color:rgb(249, 250, 251)!important;
+                }
+            }
+        </style>
+
     </head>
     <body>
         <script>
@@ -77,7 +94,7 @@
             browsersupportcheck();
         </script>
         <div class="msie-check script-check">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="/"><embed src="/logo.png" width="30" height="30" alt draggable="false" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
